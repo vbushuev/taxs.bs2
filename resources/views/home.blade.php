@@ -27,7 +27,7 @@
                         </div>
                         <div class="panel-footer">
                             <div class="row">
-                                @include('element.form.button',["title"=>"Save","action"=>"#"])
+                                @include('element.form.button',["title"=>"Fill","action"=>"fillAnketa()"])
                             </div>
 
                         </div>
@@ -45,12 +45,32 @@
                             </ul>
                         </div>
                         <div class="panel-body">
-                            Data
+                            <center>
+                                <canvas id="syms"></canvas>
+                            </center>
                         </div>
+                        <div class="panel-footer">
+                            <a href="/home" target="_blank">Отправить анкету</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 col-md-offset-left-4 newsfeed">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Live news feed
+                        </div>
+                        <div class="panel-body">
+                            @foreach ($newses as $news)
+                                @include('element.news',["news"=>$news])
+                            @endforeach
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+@include('modal.anketa')
+
 @endsection

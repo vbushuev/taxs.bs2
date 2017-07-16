@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\News;
 
-class HomeController extends Controller
+class DataController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -23,13 +23,15 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $data = [
-            "total" => count(User::all()),
-            "newses" => News::orderBy('created_at','desc')->take(10)->get()
-        ];
-        return view('home',$data);
+    public function userUpdate(Request $rq,$id){
+        $code = 200;
+        $user = User::find($id);
+        $rs=[];
+        if(is_null($user) || $user==false)$code=404;
+        else{
+            $rs = $user->fill($rq->all())->save();
+        }
+        return response()->json($rs,$code,['Content-Type' => 'application/json; charset=utf-8'],JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
     }
     /**
      * Show the application dashboard.

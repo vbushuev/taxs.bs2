@@ -12,9 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('register');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin', 'HomeController@admin')->name('admin');
+Route::prefix('/user')->group(function () {
+    Route::post('{id}/update', 'DataController@userUpdate')->name('userUpdate');
+});

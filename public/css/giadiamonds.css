@@ -33,7 +33,27 @@
   display: block;
   position: relative;
 }
-.anketa label.control-label {
+.anketa .form-group .input-group {
+  position: relative;
+}
+.anketa .form-group .input-group:after {
+  position: absolute;
+  font-family: 'Fontawesome';
+  right: 0;
+  top: 7.75px;
+  height: 2em;
+  font-size: 2em;
+  transition: all 0.2s ease-in;
+}
+.anketa .form-group .input-group.check:after {
+  content: '\f14a';
+  color: #00c851;
+}
+.anketa .form-group .input-group.fail:after {
+  content: '\f2d3';
+  color: rgba(255,9,13,0.8);
+}
+.anketa .form-group label.control-label {
   margin-top: 10px;
   margin-bottom: 0;
   font-size: 12px;

@@ -32,13 +32,30 @@
         margin-bottom: 15px;
         display: block;
         position: relative;
-    label.control-label
-        margin-top: 10px;
-        margin-bottom: 0;
-        font-size: 12px;
-        font-weight: 100;
-        color: rgba(0,0,0,.5);
-        width:100%;
-        text-align: right;
+        .input-group
+            position: relative;
+        .input-group:after
+            position: absolute;
+            font-family: 'Fontawesome';
+            right: 0;
+            top:7.75px;
+            height: 2em;
+            font-size: 2em;
+            transition: all .2s ease-in;
+        .input-group.check:after
+            content: '\f14a'
+            color: rgba(0,200,81,1);//#00C851
+        .input-group.fail:after
+            content: '\f2d3'
+            color: rgba(255,9,13,.8);
+        label.control-label
+            margin-top: 10px;
+            margin-bottom: 0;
+            font-size: 12px;
+            font-weight: 100;
+            color: rgba(0,0,0,.5);
+            width:100%;
+            text-align: right;
+
     // label.control-label:first-of-type
     //     margin-top: 0;

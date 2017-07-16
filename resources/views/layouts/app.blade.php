@@ -13,6 +13,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/mdb.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/giadiamonds.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -79,5 +81,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/mdb.min.js') }}"></script>
+    <script src="{{ asset('js/tether.min.js') }}"></script>
+    <script src="{{ asset('js/taxs.js') }}"></script>
 </body>
 </html>

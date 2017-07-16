@@ -1,7 +1,7 @@
 <div class="form-group{{ $errors->has($name) ? ' has-error' : '' }}">
     <label for="{{$name}}" class="col-md-12 control-label">{{$title}}</label>
 
-    <div class="col-md-12">
+    <div class="col-md-12 input-group check">
         @if($type=='password')
             <input id="{{$name}}" type="password" class="form-control" name="{{$name}}" required value="{{$value}}">
         @elsif($type=='date')
