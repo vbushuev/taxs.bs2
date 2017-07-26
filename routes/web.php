@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-    return redirect()->route('register');
+    return view('welcome');
+    // return redirect()->route('register');
 });
 
 Auth::routes();

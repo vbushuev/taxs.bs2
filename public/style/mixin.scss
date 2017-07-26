@@ -1,0 +1,42 @@
+@mixin clear {
+	&:before{
+		display: block;
+		clear: both;
+		content: '';
+	}
+	&:after{
+		display: block;
+		clear: both;
+		content: '';
+	}
+  
+} //@include clear;
+
+@mixin placeholder ($color) {
+	&::-webkit-input-placeholder {color: $color;}
+	&::-moz-placeholder {color: $color;}
+	&:-moz-placeholder {color: $color;}
+	&:-ms-input-placeholder {color: $color;}
+}
+
+@mixin radius ($radius) {
+	-moz-border-radius: $radius;
+	-webkit-border-radius: $radius;
+	border-radius: $radius;
+} //@include radius(10px);
+
+@mixin transition($property, $duration, $timing){
+	-webkit-transition: $property $duration $timing;
+	   -moz-transition: $property $duration $timing;
+	    -ms-transition: $property $duration $timing;
+	     -o-transition: $property $duration $timing;
+	        transition: $property $duration $timing;
+}  //@include transition(color, 0.3, ease-in-out);
+
+@mixin shadow($right, $bottom, $shadow, $color_shadow){
+	-webkit-transition: $right $bottom $shadow $color_shadow;
+	   -moz-transition: $right $bottom $shadow $color_shadow;
+	    -ms-transition: $right $bottom $shadow $color_shadow;
+	     -o-transition: $right $bottom $shadow $color_shadow;
+	        transition: $right $bottom $shadow $color_shadow;
+}  //@include b_shadow(2px, 5px, 10px, rgba(0,0,0,0.7););
